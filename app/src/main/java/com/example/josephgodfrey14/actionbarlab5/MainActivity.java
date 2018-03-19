@@ -2,6 +2,7 @@ package com.example.josephgodfrey14.actionbarlab5;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -10,15 +11,18 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.content.Context;
+import android.app.FragmentTransaction;
+
 
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -29,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private static final String TAB_KEY_INDEX = "tab_key";
+    private Fragment breakfastFragment;
+    private Fragment lunchFragment;
+    private Fragment snackFragment;
+    private Fragment dinnerFragment;
+
+
+
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -40,8 +52,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Create tabs & bind 'em
+        TabLayout tabLayout= new TabLayout(this);
+
+        TabLayout.Tab breakfastTab = (tabLayout.newTab().setText(getString(R.string.ui_tabname_breakfast)));
+        TabLayout.Tab lunchTab = (tabLayout.newTab().setText(getString(R.string.ui_tabname_lunch)));
+        TabLayout.Tab snackTab = (tabLayout.newTab().setText(getString(R.string.ui_tabname_snack)));
+        TabLayout.Tab dinnerTab = (tabLayout.newTab().setText(getString(R.string.ui_tabname_dinner)));
+
+        //Create fragments & bind 'em too
+//TODO
+        //breakfastFragment = new BreakfastFragment();
+
+        
+        //set listeners to tabs
+//TODO
+
+        //add to "actionbar"
+        tabLayout.addTab(breakfastTab);
+        tabLayout.addTab(lunchTab);
+        tabLayout.addTab(snackTab);
+        tabLayout.addTab(dinnerTab);
+
+        //restore navigation
+//TODO
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -58,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
 
     }
 
