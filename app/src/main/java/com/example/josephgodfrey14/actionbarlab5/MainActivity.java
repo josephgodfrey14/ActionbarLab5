@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 //TODO
         //breakfastFragment = new BreakfastFragment();
 
-        
+
         //set listeners to tabs
 //TODO
 
