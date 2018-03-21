@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
+//import android.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.*;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Fragment lunchFragment;
     private Fragment snackFragment;
     private Fragment dinnerFragment;
-
+    private SectionsPagerAdapter SPA;
 
 
 
@@ -67,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
 
         //set listeners to tabs
 //TODO
+        /**
+        tabLayout.addOnTabSelectedListener(OnTabSelectedListener){
+            @Override
+            public void onTabSelected(TabLayout.Tab tab){
+                int position = tab.getPosition();
+            }
+        });
+         **/
+        breakfastTab.setTablistener(new MyTabsListener(breakfastFragment, getApplicationContext())));
+        snackTab.setTablistener(new MyTabsListener(snackFragment, getApplicationContext())));
+
+
 
         //add to "actionbar"
         tabLayout.addTab(breakfastTab);
@@ -183,4 +197,8 @@ public class MainActivity extends AppCompatActivity {
             return 3;
         }
     }
+    //class MyTabsListener
+    //public class sampleFragmentPagerAdapter extends FragmentPagerAdapter {
+
+    //}
 }
