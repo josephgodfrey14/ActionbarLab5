@@ -64,11 +64,15 @@ public class MainActivity extends AppCompatActivity {
 
         //Create fragments & bind 'em too
 //TODO
-        //breakfastFragment = new BreakfastFragment();
-
+        breakfastFragment = new BreakfastFragment();
+        snackFragment = new SnackFragment();
+        lunchFragment = new LunchFragment();
+        dinnerFragment = new DinnerFragment();
 
         //set listeners to tabs
 //TODO
+        //tabLayout.addOnTabSelectedListener(OnTabSelectedListener((snackFragment, getApplicationContext())));
+
         /**
         tabLayout.addOnTabSelectedListener(OnTabSelectedListener){
             @Override
@@ -77,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
          **/
-        breakfastTab.setTablistener(new MyTabsListener(breakfastFragment, getApplicationContext())));
-        snackTab.setTablistener(new MyTabsListener(snackFragment, getApplicationContext())));
+        //breakfastTab.setTablistener(new MyTabsListener(breakfastFragment, getApplicationContext())));
+        //snackTab.setTablistener(new MyTabsListener(snackFragment, getApplicationContext())));
 
 
 
